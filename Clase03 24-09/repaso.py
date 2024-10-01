@@ -5,13 +5,13 @@ Repaso de la clase 2
 #instrucción print
 print("Bienvenidos!") #escribir - imprimir 
 print('Esto es Python',end="-")
-print("Comisión: #24216")
+print('Comisión: #24216')
 
 # variables
 # identificadores - nombre de variable
 # asignación  declaración definición actualización
-nombre = "Carlos" #str
-apellido = "Lopez" #str
+nombre = 'Carlos' #str
+apellido = 'Lopez' #str
 #apellido = 42 #int
 edad = 42 #int
 estatura = 1.78 #float 
@@ -22,8 +22,6 @@ estado_civil = None #not defineds
 
 #función type()
 print(type(estado_civil)) #bool
-
-
 
 # Guardar los ingresos de los primeros 6 meses en variables 
 ingreso_enero = 1500 
@@ -40,15 +38,6 @@ promedio_ingresos = sumatoria / 6 #float
 
 # Mostrar el promedio con una leyenda 
 # string - concatenar
-print("El ingreso promedio en el semestre es de ", promedio_ingresos)
-print("El ingreso promedio en el semestre es de "+ promedio_ingresos)
-print(f"El ingreso promedio en el semestre es de {promedio_ingresos:.2f}")
-
-
-
-
-
-
-
-
-
+print('El ingreso promedio en el semestre es de ', promedio_ingresos)
+print('El ingreso promedio en el semestre es de '+ promedio_ingresos)
+print(f'El ingreso promedio en el semestre es de {promedio_ingresos:.2f}')
