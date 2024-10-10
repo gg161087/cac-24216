@@ -3,7 +3,8 @@ from product_service import add_product, list_products, list_product, modify_pro
 
 def main():
     while True:
-        print('\nMenú E-commerce, Escriba número de opcion (1-6):')
+        print('_' * 50)
+        print('Menú E-commerce, Escriba número de opcion (1-6):'.center(50))
         print('\t 1. Agregar producto')
         print('\t 2. Listar productos')
         print('\t 3. Mostrar producto por ID')

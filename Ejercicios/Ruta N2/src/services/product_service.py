@@ -17,18 +17,17 @@ def list_products():
     if not products:
         print("La lista de productos está vacía.")
     else:
+        print(f'{"#":<5} {"Producto":<15} {"Stock":>15} {"Precio($)":>15}')
         for product in products:
-            print(f"ID: {product['id']}, Nombre: {product['name']}, Stock: {product['stock']}, Precio: {product['price']}")
+            print(f"{product['id']:<5} {product['name']:<15} {product['stock']:>15} {product['price']:>15.2f}")
 
 def list_product():
     product_id = int(input("Ingrese el ID del producto: "))
     product = get_product(product_id)
     
     if product:
-        print(f"ID: {product['id']}")
-        print(f"Nombre: {product['name']}")
-        print(f"Stock: {product['stock']}")
-        print(f"Precio: ${product['price']:.2f}")
+        print(f'{"#":<5} {"Producto":<15} {"Stock":>15} {"Precio($)":>15}')
+        print(f"{product['id']:<5} {product['name']:<15} {product['stock']:>15} {product['price']:>15.2f}")
     else:
         print(f"No se encontró un producto con ID {product_id}.")
 
