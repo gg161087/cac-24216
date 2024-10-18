@@ -13,7 +13,7 @@ def get_products():
 
 def get_product(product_id):
     for product in list_products:
-        if product.get('id') == product_id:
+        if product['id'] == product_id:
             return product
     return None 
 

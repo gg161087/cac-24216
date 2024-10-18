@@ -10,28 +10,35 @@ def main():
         print('\t 4. Actualizar producto')
         print('\t 5. Eliminar producto por ID')
         print('\t 6. Salir')
-        option = input('Selecciona una opción: ')
 
-        if option == '1':
-            system('cls')
-            add_product()
-        elif option == '2':
-            system('cls')
-            list_products()
-        elif option == '3':
-            system('cls')
-            list_product()
-        elif option == '4':
-            system('cls')
-            modify_product()
-        elif option == '5':
-            system('cls')
-            remove_product()
-        elif option == '6':
-            break
+        prompt = input('Selecciona una opción: ')
+        if prompt.isnumeric():
+            option = int(prompt)
+            if option > 0 and option <= 6:
+                match option:
+                    case 1:
+                        system('cls')
+                        add_product()
+                    case 2:
+                        system('cls')
+                        list_products() 
+                    case 3:  
+                        system('cls')
+                        list_product()
+                    case 4:
+                        system('cls')
+                        modify_product()
+                    case 5:
+                        system('cls')
+                        remove_product()
+                    case 6:
+                        break
+            else:
+                system('cls')
+                print('\t Opción no válida, intente de nuevo: ')    
         else:
             system('cls')
-            print('\t Opción no válida, intente de nuevo:')        
+            print('\t Opción no válida, intente de nuevo: ')        
 
 if __name__ == '__main__':
     main()
