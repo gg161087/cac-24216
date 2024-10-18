@@ -1,5 +1,5 @@
 from os import system
-from product_service import add_product, list_products, list_product, modify_product, remove_product
+from product_service import add_product, list_products, list_product, modify_product, remove_product, edit_product
 
 def main():
     while True:
@@ -28,7 +28,7 @@ def main():
                         list_product()
                     case 4:
                         system('cls')
-                        modify_product()
+                        edit_product()
                     case 5:
                         system('cls')
                         remove_product()
