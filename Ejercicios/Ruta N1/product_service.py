@@ -3,32 +3,32 @@ from product_model import create_product, get_products, get_product, update_prod
 
 def add_product():
     print('Para volver al menú anterior escribir "-1"')
-    volver = False
+    back = False
     name = ''
     stock = 0
     price = 0
 
-    while not volver:
+    while not back:
         try:
             # Obtener nombre del producto
             name = validated_input('Nombre del producto: ', name, validate_name, allow_skip=False)
             if name == -1:
-                volver = True
+                back = True
                 break
             # Obtener stock del producto
             stock = validated_input(f'Stock de {name}: ', stock, validate_stock)
             if stock == -1:
-                volver = True
+                back = True
                 break
             stock = int(stock)
             # Obtener precio del producto
             price = validated_input(f'Precio de {name}: ', price, validate_price)
             if price == -1:
-                volver = True
+                back = True
                 break
             price = float(price)
             # Crear el producto si no se vuelve
-            if not volver:
+            if not back:
                 new_product = {
                     "name": name,
                     "stock": stock,
@@ -36,7 +36,7 @@ def add_product():
                 }
                 create_product(new_product)
                 print(f'Producto "{name}" agregado con éxito.')
-                volver = True
+                back = True
         except ValueError as ve:
             print(f'Error en la conversión de datos: {ve}')
         except Exception as e:
@@ -53,11 +53,11 @@ def list_products():
 
 def retrieve_product():
     print('Para volver al menu anterior escribir "-1"')    
-    volver = False
-    while not volver:
+    back = False
+    while not back:
         prompt = input('Ingrese el ID del producto: ')            
         if prompt == '-1':
-            volver = True
+            back = True
             break
         else:
             if prompt.isnumeric() and int(prompt) > 0:
@@ -73,11 +73,11 @@ def retrieve_product():
 
 def edit_product():
     print('Para volver al menú anterior escribir "-1"')
-    volver = False
+    back = False
     product_id = 0
     product = {}
 
-    while not volver:
+    while not back:
         # Obtener ID del producto
         prompt = validated_input('Ingrese el ID del producto a actualizar: ', '', allow_skip=False)
         if prompt == -1:
@@ -118,15 +118,15 @@ def edit_product():
         else:
             print(f'No se pudo actualizar el producto con ID {product_id}.')
         
-        volver = True  # Salir del bucle después de la actualización
+        back = True  # Salir del bucle después de la actualización
 
 def remove_product():
     print('Para volver al menu anterior escribir "-1"')
-    volver = False
-    while not volver:        
+    back = False
+    while not back:        
         prompt = input('Ingrese el número de ID del producto a eliminar: ')
         if prompt == '-1':
-            volver = True 
+            back = True 
             break
         else:
             if prompt.isnumeric() and int(prompt) > 0:
