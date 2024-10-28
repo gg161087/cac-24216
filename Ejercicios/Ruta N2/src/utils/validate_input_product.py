@@ -2,7 +2,7 @@ def validate_name(input_str):
     return len(input_str) >= 3 and not input_str.isnumeric()
 
 def validate_stock(input_str):
-    return input_str.isnumeric() and int(input_str) > 0
+    return input_str.isnumeric() and int(input_str) >= 0
 
 def validate_price(input_str):
     return input_str.replace('.', '', 1).isdigit() and float(input_str) > 0
