@@ -1,0 +1,20 @@
+1. Registro artistas
+2. Consulta artistas
+3. Reporte artistas registrados
+4. Actualizar artista
+5. Borrar artista
+
+artistas = {
+    1: {"nombre": "Taylor Swift", "género": "Pop", "país": "Estados Unidos"},
+    2: {"nombre": "Shakira", "género": "Pop", "país": "Colombia"},
+    3: {"nombre": "Bad Bunny", "género": "Reguetón", "país": "Puerto Rico"},
+    4: {"nombre": "Adele", "género": "Soul", "país": "Reino Unido"},
+    5: {"nombre": "Rosalía", "género": "Flamenco", "país": "España"},
+}
+
+inventario = {
+   1: {"nombre": "Manzana", "descripcion": "Fruta fresca", 
+"cantidad": 50, "precio": 0.5, "categoria": "Frutas"},
+   2: {"nombre": "Pan", "descripcion": "Pan casero", 
+"cantidad": 20, "precio": 1.0, "categoria": "Panadería"}
+}
