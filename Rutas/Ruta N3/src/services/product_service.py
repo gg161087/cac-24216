@@ -122,3 +122,6 @@ def delete_product_by_id():
                     print(f'No se encontró un producto con ID {product_id}.')
             else:
                 print('El ID tiene que ser numerico y mayor que 0.')
+
+def low_stock_report():
+    pass
