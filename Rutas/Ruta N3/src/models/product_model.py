@@ -67,3 +67,13 @@ def delete_product(product_id):
         # El producto no existe
         conn.close()
         return False  # Indica que no se encontró el producto
+    
+def get_products_low_stock():   
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM products WHERE stock <= 10')
+    results = cursor.fetchall()
+    conn.close()
+    keys = ["id", "name", "stock", "price"]
+    dict_results = [dict(zip(keys, row)) for row in results]
+    return dict_results
