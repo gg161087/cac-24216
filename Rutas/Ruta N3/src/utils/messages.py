@@ -6,13 +6,13 @@ def display_divider():
     print(Fore.YELLOW + '-' * 70)
 
 def display_table_headers():
-    print(f'\t{Back.GREEN}{"#":<5} {"Producto":<15} {"Stock":>15} {"Precio($)":>15}')
+    print(f'\t{Back.GREEN}{"#":<5}{"Producto":<15}{"Precio($)":>15}{"Stock":>15}')
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def display_product(product):    
-    print(f'\t{product['id']:<5} {product['name']:<15} {product['stock']:>15} {product['price']:>15.2f}')
+    print(f'\t{product['id']:<5}{product['name']:<15}{product['price']:>15.2f}{product['stock']:>15}')
 
 def display_products(products):
     display_divider()
@@ -47,5 +47,3 @@ def display_closing_program():
 
 def display_invalid_option():
     print('\t Opción no válida, intente de nuevo: ')
-
-# 9        8

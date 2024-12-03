@@ -13,7 +13,7 @@ def get_products():
     cursor.execute('SELECT * FROM products')
     results = cursor.fetchall()
     conn.close()
-    keys = ["id", "name", "stock", "price"]
+    keys = ['id', 'name', 'price', 'stock']
     dict_results = [dict(zip(keys, row)) for row in results]
     return dict_results
 
@@ -21,7 +21,7 @@ def get_product(product_id):
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT id, name, stock, price
+        SELECT id, name, price, stock
         FROM products
         WHERE id = ?
     """, (product_id,))
@@ -33,8 +33,8 @@ def get_product(product_id):
         return {
             "id": row[0],
             "name": row[1],
-            "stock": row[2],
-            "price": row[3],
+            "price": row[2],
+            "stock": row[3],
         }
     return None
 
@@ -43,9 +43,9 @@ def update_product(product_id, name, price, stock):
     cursor = conn.cursor()
     cursor.execute("""
         UPDATE products
-        SET name = ?, stock = ?, price = ?
+        SET name = ?, price = ?, stock = ?
         WHERE id = ?
-    """, (name, stock, price, product_id))
+    """, (name, price, stock, product_id))
     conn.commit()
     updated_rows = cursor.rowcount
     conn.close()
@@ -74,6 +74,6 @@ def get_products_low_stock():
     cursor.execute('SELECT * FROM products WHERE stock <= 10')
     results = cursor.fetchall()
     conn.close()
-    keys = ["id", "name", "stock", "price"]
+    keys = ['id', 'name', 'price', 'stock']
     dict_results = [dict(zip(keys, row)) for row in results]
     return dict_results
